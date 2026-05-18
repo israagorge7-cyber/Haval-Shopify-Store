@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>STIQO Protein Loaded Coffee – 10g Protein, 180mg Koffein | 14er-Pack</title>
-<link rel="stylesheet" href="index.html"><!-- ignored -->
+<title>STIQO Protein Iced Coffee – 900 g | 21 g Protein, 0 g Zucker</title>
+<meta name="description" content="STIQO Protein Iced Coffee 900 g – 30 Portionen Iced Coffee zum Selbstmixen mit 21 g Whey-Protein, echtem Kaffee, 0 g Zuckerzusatz. Made in Germany.">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 <style>
   :root{
@@ -16,7 +16,7 @@
   *,*::before,*::after{box-sizing:border-box}
   body{margin:0;font-family:var(--font-body);color:var(--color-text);background:#fff;line-height:1.6}
   img{max-width:100%;display:block;height:auto}a{color:inherit;text-decoration:none}
-  button{font:inherit;cursor:pointer;border:0;background:none}
+  button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
   h1,h2,h3,h4{font-family:var(--font-heading);margin:0 0 .5em;line-height:1.2}
   .container{max-width:var(--page-width);margin:0 auto;padding:0 20px}
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.85rem 1.5rem;border-radius:var(--radius);font-weight:600;transition:.15s;line-height:1}
@@ -71,6 +71,7 @@
 
   .description{padding:2.5rem 0;max-width:760px;margin:0 auto}
   .description h2{margin-bottom:1rem}
+  .description h3{margin-top:1.75rem}
   .description ul{padding-left:1.5rem;color:var(--color-muted)}
   .description li{margin-bottom:.4rem}
   .nutri{width:100%;border-collapse:collapse;margin-top:.5rem}
@@ -99,7 +100,7 @@
     <a href="index.html"><span class="logo-text">STIQO</span></a>
     <nav class="site-nav">
       <a href="index.html">Startseite</a>
-      <a href="product.html">Protein Coffee</a>
+      <a href="product.html">Protein Iced Coffee</a>
       <a href="index.html#how">So funktioniert's</a>
       <a href="index.html#reviews">Bewertungen</a>
       <a href="index.html#faq">FAQ</a>
@@ -118,7 +119,7 @@
 <main class="product-page">
   <div class="container product-grid">
     <div class="gallery">
-      <img id="mainImg" src="https://images.unsplash.com/photo-1517959105821-eaf2591984ca?auto=format&fit=crop&w=1200&q=85" alt="STIQO Protein Coffee Hauptbild">
+      <img id="mainImg" src="https://images.unsplash.com/photo-1517959105821-eaf2591984ca?auto=format&fit=crop&w=1200&q=85" alt="STIQO Protein Iced Coffee Hauptbild">
       <div class="gallery__thumbs">
         <button class="gallery__thumb active" data-img="https://images.unsplash.com/photo-1517959105821-eaf2591984ca?auto=format&fit=crop&w=1200&q=85"><img src="https://images.unsplash.com/photo-1517959105821-eaf2591984ca?auto=format&fit=crop&w=200&q=70" alt=""></button>
         <button class="gallery__thumb" data-img="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=1200&q=85"><img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=200&q=70" alt=""></button>
@@ -130,33 +131,33 @@
 
     <div class="info">
       <p class="info__rating">★★★★★ <a href="#">4,9 / 5 · 2.847 Bewertungen</a></p>
-      <h1 class="info__title">STIQO Protein Loaded Coffee – 10 g Protein, 180 mg Koffein</h1>
+      <h1 class="info__title">STIQO Protein Iced Coffee – 900 g (30 Portionen)</h1>
 
       <div class="info__price">
         <span class="price-compare">39,99 €</span>
-        <span class="price-current">24,99 €</span>
-        <span class="price-badge">-37%</span>
+        <span class="price-current">27,99 €</span>
+        <span class="price-badge">-30%</span>
       </div>
-      <p class="info__tax">inkl. MwSt., zzgl. Versand · 11,16 €/100 g · Füllmenge 224 g (14 × 16 g)</p>
+      <p class="info__tax">inkl. MwSt., zzgl. Versand · 3,11 €/100 g · 0,93 € pro Portion</p>
 
-      <p class="info__short">Cremiger Café-Latte-Geschmack mit 10 g Whey-Protein und 180 mg Koffein. Heiß oder eiskalt in 30 Sekunden gemixt. Ohne Zuckerzusatz, glutenfrei, Made in Germany.</p>
+      <p class="info__short">Cremiger Iced Coffee zum Selbstmixen – mit 21 g Premium Whey-Protein, echtem Kaffeepulver und nur 107 kcal pro 100 g. 0 g Zuckerzusatz. Heiß oder eiskalt in 30 Sekunden trinkfertig.</p>
 
       <fieldset class="opt">
-        <legend>Geschmack: <strong id="selFlavor">Classic Latte</strong></legend>
+        <legend>Geschmack: <strong id="selFlavor">Caramel Macchiato</strong></legend>
         <div class="opt__values">
-          <button class="pill active" data-set="flavor" data-val="Classic Latte">Classic Latte</button>
-          <button class="pill" data-set="flavor" data-val="Vanille Caramel">Vanille Caramel</button>
-          <button class="pill" data-set="flavor" data-val="Schokolade Mokka">Schokolade Mokka</button>
-          <button class="pill" data-set="flavor" data-val="Hazelnut Cold Brew">Hazelnut Cold Brew</button>
+          <button class="pill active" data-set="flavor" data-val="Caramel Macchiato">Caramel Macchiato</button>
+          <button class="pill" data-set="flavor" data-val="Vanilla Latte">Vanilla Latte</button>
+          <button class="pill" data-set="flavor" data-val="Schoko Mocha">Schoko Mocha</button>
+          <button class="pill" data-set="flavor" data-val="Hazelnut">Hazelnut</button>
         </div>
       </fieldset>
 
       <fieldset class="opt">
-        <legend>Pack-Größe: <strong id="selSize">14er-Pack</strong></legend>
+        <legend>Größe: <strong id="selSize">900 g (30 Portionen)</strong></legend>
         <div class="opt__values">
-          <button class="pill" data-set="size" data-val="7er-Pack" data-price="14,99">7er-Pack</button>
-          <button class="pill active" data-set="size" data-val="14er-Pack" data-price="24,99">14er-Pack ⭐</button>
-          <button class="pill" data-set="size" data-val="30er-Pack" data-price="44,99">30er-Pack</button>
+          <button class="pill" data-set="size" data-val="450 g (15 Portionen)" data-price="17,99">450 g</button>
+          <button class="pill active" data-set="size" data-val="900 g (30 Portionen)" data-price="27,99">900 g ⭐</button>
+          <button class="pill" data-set="size" data-val="2 × 900 g Vorratspack" data-price="49,99">2× 900 g</button>
         </div>
       </fieldset>
 
@@ -173,14 +174,14 @@
         <div class="qty"><button id="qDown">−</button><input id="qty" type="number" value="1" min="1"><button id="qUp">+</button></div>
       </div>
 
-      <button class="btn btn--primary btn--lg btn--block" id="atc">In den Warenkorb · <span id="atcPrice">24,99 €</span></button>
+      <button class="btn btn--primary btn--lg btn--block" id="atc">In den Warenkorb · <span id="atcPrice">27,99 €</span></button>
       <p class="stock">⚡ Nur noch wenige verfügbar – aufgrund TikTok-Hype begrenzte Menge</p>
 
       <ul class="trust-list">
         <li>🚚 Heute bestellt – morgen versendet</li>
         <li>🔒 SSL-verschlüsselte Bezahlung</li>
         <li>↩ 30 Tage Geld-zurück-Garantie</li>
-        <li>🇩🇪 Versand aus Deutschland</li>
+        <li>🇩🇪 Made in Germany</li>
       </ul>
 
       <div class="payments">
@@ -193,38 +194,46 @@
       </div>
 
       <div class="legal-warning">
-        ⚠ Hoher Koffeingehalt. Für Kinder, Schwangere und Stillende nicht empfohlen (180 mg pro Portion). Enthält <strong>Milch (Laktose)</strong>.
+        ⚠ Enthält Koffein (25 mg pro Portion). Für Kinder, Schwangere und Stillende nicht empfohlen. Enthält <strong>Milch (Laktose)</strong>.
       </div>
     </div>
   </div>
 
   <div class="container description">
     <h2>Produktbeschreibung</h2>
-    <p><strong>Der Kaffee, der mehr kann.</strong></p>
-    <p>STIQO Protein Loaded Coffee ist nicht einfach nur Kaffee – es ist dein perfekter Start in den Tag. <strong>10 g hochwertiges Whey-Protein</strong> für Sättigung und Muskelaufbau, <strong>180 mg Koffein</strong> für echten Wachmacher-Effekt, und ein Geschmack wie ein Premium Iced Latte aus deinem Lieblings-Coffee-Shop. Nur 65 kcal pro Portion, ohne Zuckerzusatz, ohne künstliche Süßstoffe.</p>
+    <p><strong>Iced Coffee. Aber mit 21 g Protein.</strong></p>
+    <p>STIQO Protein Iced Coffee ist dein cremiger Kaffee-Genuss zum Selbstmixen – ganz ohne schlechtes Gewissen. Mit <strong>21 g hochwertigem Whey-Protein</strong>, echtem Kaffeepulver und einem sanften Koffein-Kick (25 mg) startet dein Tag mit Genuss und Power. Nur 107 kcal pro 100 g, weniger als 2 g Zucker pro Portion und 70% Protein.</p>
 
-      <h3>✦ Warum STIQO?</h3>
-      <ul>
-        <li><strong>10 g Whey-Protein</strong> pro Sachet – für Muskeln & Sättigung</li>
-        <li><strong>180 mg Koffein</strong> aus 100% Arabica – mehr Power als 2 Espressi</li>
-        <li><strong>Nur 65 kcal</strong> – ohne Zuckerzusatz, ohne künstliche Süßstoffe</li>
-        <li><strong>Heiß oder kalt</strong> – mit Wasser, Milch oder Hafermilch</li>
-        <li><strong>Klumpenfrei</strong> – löst sich in 30 Sekunden vollständig auf</li>
-        <li><strong>Glutenfrei & laborgeprüft</strong> – Made in Germany</li>
-      </ul>
+    <h3>✦ Warum STIQO?</h3>
+    <ul>
+      <li><strong>21 g Whey-Protein</strong> pro Portion – für Muskelaufbau und Sättigung</li>
+      <li><strong>Echter Kaffee-Geschmack</strong> – mit fein gemahlenem Kaffeepulver</li>
+      <li><strong>0 g Zuckerzusatz</strong> – natürlich gesüßt mit Steviolglycosiden</li>
+      <li><strong>Nur 107 kcal pro 100 g</strong> – passt perfekt in jede Diät</li>
+      <li><strong>Heiß oder eiskalt</strong> – mit Wasser, Milch oder Hafermilch</li>
+      <li><strong>Klumpenfrei dank Xanthan</strong> – löst sich in 30 Sekunden vollständig auf</li>
+      <li><strong>Glutenfrei & laborgeprüft</strong> – Made in Germany</li>
+    </ul>
 
-      <h3>✦ Nährwerte pro Portion (1 Sachet, 16 g)</h3>
-      <table class="nutri">
-        <tr><td>Energie</td><td>65 kcal / 272 kJ</td></tr>
-        <tr><td>Protein</td><td>10 g</td></tr>
-        <tr><td>Kohlenhydrate</td><td>3,2 g (davon Zucker 1,1 g)</td></tr>
-        <tr><td>Fett</td><td>1,1 g</td></tr>
-        <tr><td>Koffein</td><td>180 mg</td></tr>
-        <tr><td>Salz</td><td>0,15 g</td></tr>
-      </table>
+    <h3>✦ Nährwerte pro Portion (30 g Pulver)</h3>
+    <table class="nutri">
+      <tr><td>Energie</td><td>114 kcal / 478 kJ</td></tr>
+      <tr><td>Protein</td><td>21 g</td></tr>
+      <tr><td>Kohlenhydrate</td><td>2,5 g (davon Zucker 1,8 g)</td></tr>
+      <tr><td>Fett</td><td>0,9 g</td></tr>
+      <tr><td>Koffein</td><td>25 mg</td></tr>
+      <tr><td>Salz</td><td>0,18 g</td></tr>
+    </table>
 
-      <h3 style="margin-top:2rem">✦ Zutaten</h3>
-      <p>Instantkaffee (100% Arabica) 35%, Molkenproteinkonzentrat 50%, Magermilchpulver, Aroma, Verdickungsmittel: Xanthan, Süßungsmittel: Steviolglycoside.</p>
+    <h3>✦ Zutaten</h3>
+    <p>Molkenproteinkonzentrat (70%), Kaffeepulver, Magermilchpulver, Aroma, Verdickungsmittel: Xanthangummi, Speisesalz, Süßungsmittel: Steviolglycoside (Stevia).</p>
+
+    <h3>✦ Lieferumfang</h3>
+    <ul>
+      <li>1 × 900 g STIQO Protein Iced Coffee Dose (30 Portionen)</li>
+      <li>1 × Mess-Scoop (30 g)</li>
+      <li>1 × Anleitung mit Rezept-Ideen</li>
+    </ul>
   </div>
 </main>
 
@@ -233,7 +242,6 @@
 </footer>
 
 <script>
-  // gallery
   document.querySelectorAll('.gallery__thumb').forEach(t=>{
     t.addEventListener('click',()=>{
       document.querySelectorAll('.gallery__thumb').forEach(x=>x.classList.remove('active'));
@@ -241,9 +249,8 @@
       document.getElementById('mainImg').src = t.dataset.img;
     });
   });
-  // pills
-  const sel = {flavor:'Classic Latte',size:'14er-Pack',source:'Whey'};
-  const price = {'7er-Pack':'14,99','14er-Pack':'24,99','30er-Pack':'44,99'};
+  const sel = {flavor:'Caramel Macchiato',size:'900 g (30 Portionen)',source:'Whey'};
+  const price = {'450 g (15 Portionen)':'17,99','900 g (30 Portionen)':'27,99','2 × 900 g Vorratspack':'49,99'};
   document.querySelectorAll('.pill').forEach(p=>{
     p.addEventListener('click',()=>{
       document.querySelectorAll('.pill[data-set="'+p.dataset.set+'"]').forEach(x=>x.classList.remove('active'));
@@ -256,7 +263,6 @@
       }
     });
   });
-  // qty
   document.getElementById('qUp').addEventListener('click',()=>{const i=document.getElementById('qty');i.value=parseInt(i.value)+1;});
   document.getElementById('qDown').addEventListener('click',()=>{const i=document.getElementById('qty');i.value=Math.max(1,parseInt(i.value)-1);});
   document.getElementById('atc').addEventListener('click',()=>{
