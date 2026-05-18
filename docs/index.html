@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>STIQO – Protein Loaded Coffee | 10g Protein, 180mg Koffein</title>
+<meta name="description" content="STIQO Protein Loaded Coffee mit 10 g Whey-Protein und 180 mg Koffein. Cremiger Café-Geschmack, heiß oder kalt, in 30 Sekunden trinkfertig. Versand aus Deutschland.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --color-primary:#A0522D;--color-secondary:#3E2A1F;--color-accent:#F4ECE2;
+    --color-text:#1F1410;--color-bg:#FFFFFF;--color-muted:#6B5A4F;--color-border:#E8DDD0;
+    --font-body:'Inter',sans-serif;--font-heading:'Playfair Display',serif;
+    --page-width:1280px;--radius:12px;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:var(--font-body);color:var(--color-text);background:var(--color-bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;height:auto;display:block}
+  a{color:inherit;text-decoration:none}
+  button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+  h1,h2,h3,h4{font-family:var(--font-heading);margin:0 0 .5em;line-height:1.15;letter-spacing:-.01em}
+  h1{font-size:clamp(2rem,4.2vw,3.4rem)}h2{font-size:clamp(1.5rem,3vw,2.25rem)}
+  p{margin:0 0 1em}
+  .container{max-width:var(--page-width);margin:0 auto;padding:0 20px}
+  .section-title{text-align:center;margin-bottom:.5em}
+  .section-sub{text-align:center;color:var(--color-muted);margin-bottom:2em}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.85rem 1.5rem;border-radius:var(--radius);font-weight:600;transition:.15s;line-height:1;text-align:center}
+  .btn--primary{background:var(--color-primary);color:#fff}
+  .btn--primary:hover{transform:translateY(-1px);filter:brightness(1.05);box-shadow:0 8px 18px rgba(0,0,0,.15)}
+  .btn--ghost{background:transparent;color:var(--color-text);border:2px solid var(--color-border)}
+  .btn--white{background:#fff;color:var(--color-secondary)}
+  .btn--lg{padding:1.05rem 1.75rem;font-size:1.05rem}
+
+  .announcement-bar{background:var(--color-secondary);color:#fff;font-size:.85rem;padding:.55rem 0;text-align:center}
+  .site-header{position:sticky;top:0;z-index:50;background:var(--color-bg);border-bottom:1px solid var(--color-border)}
+  .site-header__inner{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:1.5rem;padding:1rem 20px;max-width:var(--page-width);margin:0 auto}
+  .logo-text{font-family:var(--font-heading);font-size:1.6rem;font-weight:700;letter-spacing:.18em;color:var(--color-primary)}
+  .site-nav{display:flex;gap:1.75rem;justify-content:center}
+  .site-nav a{font-weight:500;padding:.5rem 0;position:relative}
+  .site-nav a:hover::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--color-primary)}
+  .site-header__actions{display:flex;gap:.5rem;align-items:center}
+  .header-icon{padding:.5rem;border-radius:999px;position:relative;display:inline-flex}
+  .header-icon:hover{background:var(--color-accent)}
+  .badge-count{position:absolute;top:-2px;right:-2px;background:var(--color-primary);color:#fff;font-size:.7rem;min-width:18px;height:18px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;padding:0 4px}
+
+  .hero{padding:4.5rem 0;background:#F4ECE2}
+  .hero__inner{display:grid;grid-template-columns:1.05fr 1fr;gap:3rem;align-items:center;max-width:var(--page-width);margin:0 auto;padding:0 20px}
+  .hero__eyebrow{display:inline-block;background:var(--color-primary);color:#fff;padding:.4rem .85rem;border-radius:999px;font-size:.78rem;letter-spacing:.06em;margin-bottom:1rem;text-transform:uppercase;font-weight:700}
+  .hero h1{margin-bottom:1rem}
+  .hero__sub{font-size:1.1rem;color:var(--color-muted);margin-bottom:1.75rem}
+  .hero__ctas{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem}
+  .hero__bullets{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.4rem;color:var(--color-muted)}
+  .hero__media img{border-radius:24px;box-shadow:0 30px 60px -20px rgba(0,0,0,.25);width:100%}
+
+  .benefits{padding:4rem 0;background:var(--color-accent)}
+  .benefits__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
+  .benefit-card{background:#fff;border-radius:var(--radius);padding:1.75rem;text-align:center;box-shadow:0 1px 3px rgba(15,23,42,.04)}
+  .benefit-card__icon{font-size:2rem;margin-bottom:.75rem}
+  .benefit-card h3{font-size:1.1rem;margin-bottom:.35em}
+  .benefit-card p{color:var(--color-muted);margin:0;font-size:.95rem}
+
+  .featured{padding:5rem 0}
+  .featured__inner{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+  .featured__media img{border-radius:var(--radius);width:100%}
+  .rating{color:var(--color-primary);font-weight:600;margin:.5rem 0 1rem}
+  .rating span{color:var(--color-muted);font-weight:400;margin-left:.5rem}
+  .price{display:flex;align-items:center;flex-wrap:wrap;gap:.75rem;margin:1.5rem 0}
+  .price-compare{color:var(--color-muted);text-decoration:line-through;font-size:1.1rem}
+  .price-current{color:var(--color-primary);font-size:1.85rem;font-weight:700}
+  .price-tax{width:100%;font-size:.85rem;color:var(--color-muted)}
+  .trust-row{display:flex;flex-wrap:wrap;gap:1rem 1.5rem;margin-top:1.5rem;font-size:.9rem;color:var(--color-muted)}
+
+  .how{padding:4rem 0}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+  .step{text-align:center;padding:2rem 1.5rem;background:var(--color-accent);border-radius:var(--radius)}
+  .step__num{width:44px;height:44px;margin:0 auto 1rem;background:var(--color-primary);color:#fff;border-radius:999px;display:flex;align-items:center;justify-content:center;font-weight:700}
+
+  .testimonials{padding:4rem 0;background:var(--color-accent)}
+  .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+  .review{background:#fff;padding:1.75rem;border-radius:var(--radius);margin:0;box-shadow:0 1px 3px rgba(15,23,42,.04)}
+  .stars{color:var(--color-primary);margin-bottom:.5rem}
+  blockquote{margin:0 0 1rem;font-style:italic}
+  .review figcaption strong{display:block}.review figcaption span{color:var(--color-muted);font-size:.85rem}
+
+  .faq{padding:4rem 0}
+  .faq__list{max-width:760px;margin:0 auto}
+  details{border-bottom:1px solid var(--color-border);padding:1.25rem 0}
+  details summary{font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+  details summary::after{content:"+";font-size:1.4rem;color:var(--color-primary)}
+  details[open] summary::after{content:"−"}
+  .faq__answer{padding-top:.75rem;color:var(--color-muted)}
+
+  .cta-banner{padding:3.5rem 0;background:var(--color-secondary);color:#fff;text-align:center}
+  .cta-banner h2{color:#fff;margin-bottom:.4em}
+  .cta-banner p{opacity:.85;margin-bottom:1.25rem}
+
+  .site-footer{background:var(--color-secondary);color:#fff;padding:3rem 0 1.5rem;margin-top:0}
+  .site-footer h4{color:#fff}
+  .footer-newsletter{text-align:center;max-width:540px;margin:0 auto 3rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.15)}
+  .footer-newsletter p{opacity:.8}
+  .newsletter-form{display:flex;gap:.5rem;max-width:420px;margin:1.25rem auto 0}
+  .newsletter-form input{flex:1;padding:.85rem 1rem;border-radius:var(--radius);border:0}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2rem}
+  .footer-col p,.footer-col li{color:rgba(255,255,255,.75)}
+  .footer-col ul{list-style:none;padding:0;margin:0}
+  .footer-col li{padding:.25rem 0}
+  .footer-payments{display:flex;flex-wrap:wrap;gap:.35rem}
+  .payment-badge{padding:.35rem .65rem;background:rgba(255,255,255,.1);border-radius:6px;font-weight:600;font-size:.75rem;letter-spacing:.03em}
+  .footer-bottom{display:flex;justify-content:space-between;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.15);font-size:.85rem;opacity:.75;flex-wrap:wrap;gap:.5rem}
+
+  @media (max-width:860px){
+    .hero__inner,.featured__inner{grid-template-columns:1fr}
+    .benefits__grid{grid-template-columns:repeat(2,1fr)}
+    .steps,.reviews{grid-template-columns:1fr}
+    .footer-grid{grid-template-columns:1fr 1fr}
+    .site-nav{display:none}
+  }
+
+  /* Demo banner only on preview */
+  .preview-bar{background:#FFC857;color:#1F1410;text-align:center;padding:.6rem 1rem;font-size:.85rem}
+  .preview-bar a{font-weight:700;text-decoration:underline}
+</style>
+</head>
+<body>
+
+<div class="preview-bar">
+  📦 STIQO Preview – statische Vorschau des Shopify Themes ·
+  <a href="product.html">Produktseite ansehen →</a> ·
+  <a href="https://github.com/israagorge7-cyber/Haval-Shopify-Store">GitHub Repo</a>
+</div>
+
+<div class="announcement-bar">☕ Kostenloser Versand ab 39€ ✦ 30 Tage Geld-zurück-Garantie ✦ Versand aus Deutschland</div>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="index.html"><span class="logo-text">STIQO</span></a>
+    <nav class="site-nav">
+      <a href="index.html">Startseite</a>
+      <a href="product.html">Protein Coffee</a>
+      <a href="#how">So funktioniert's</a>
+      <a href="#reviews">Bewertungen</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="site-header__actions">
+      <a href="#" class="header-icon" aria-label="Suche">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </a>
+      <a href="#" class="header-icon" aria-label="Warenkorb">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>
+        <span class="badge-count">0</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero__inner">
+    <div>
+      <span class="hero__eyebrow">★ TikTok Bestseller ✦ #1 in Deutschland</span>
+      <h1>10 g Protein.<br>180 mg Koffein.<br>0 g Kompromiss.</h1>
+      <p class="hero__sub">STIQO Protein Loaded Coffee – dein Kaffee-Kick mit echtem Protein-Boost. Heiß oder kalt in 30 Sekunden gemixt. Perfekt für Gym, Office und alle, die mehr aus ihrem Morgen holen.</p>
+      <div class="hero__ctas">
+        <a href="product.html" class="btn btn--primary btn--lg">Jetzt -40% sichern</a>
+        <a href="#how" class="btn btn--ghost btn--lg">So funktioniert's</a>
+      </div>
+      <ul class="hero__bullets">
+        <li>★★★★★ Über 12.000 zufriedene Kunden in Deutschland</li>
+        <li>☕ 10 g Protein · 180 mg Koffein · nur 65 kcal</li>
+        <li>🇩🇪 Versand aus Deutschland in 24 h</li>
+      </ul>
+    </div>
+    <div class="hero__media">
+      <img src="https://images.unsplash.com/photo-1517959105821-eaf2591984ca?auto=format&fit=crop&w=1200&q=80" alt="STIQO Protein Coffee Iced Latte">
+    </div>
+  </div>
+</section>
+
+<section class="benefits">
+  <div class="container">
+    <h2 class="section-title">Warum STIQO?</h2>
+    <p class="section-sub">Premium Protein-Kaffee, der wirklich schmeckt – ohne Pulver-Aftertaste.</p>
+    <div class="benefits__grid">
+      <div class="benefit-card"><div class="benefit-card__icon">💪</div><h3>10 g Protein pro Sachet</h3><p>Hochwertiges Whey-Protein für Muskelaufbau und Sättigung – ohne Klumpen.</p></div>
+      <div class="benefit-card"><div class="benefit-card__icon">⚡</div><h3>180 mg Koffein</h3><p>Echter Wachmacher aus 100% Arabica – mehr Power als ein Espresso.</p></div>
+      <div class="benefit-card"><div class="benefit-card__icon">❄️</div><h3>Heiß oder Eiskalt</h3><p>In Wasser oder Milch – einfach mixen. In 30 Sekunden trinkfertig.</p></div>
+      <div class="benefit-card"><div class="benefit-card__icon">🇩🇪</div><h3>Versand aus Deutschland</h3><p>Heute bestellt, morgen geliefert. Klimaneutral mit DHL.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="featured">
+  <div class="container featured__inner">
+    <div class="featured__media">
+      <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=900&q=80" alt="STIQO Protein Coffee Sachet">
+    </div>
+    <div>
+      <span class="hero__eyebrow">★ Viral auf TikTok – 8 Mio. Views</span>
+      <h2>STIQO Protein Loaded Coffee</h2>
+      <div class="rating">★★★★★ <span>4,9 / 5 · 2.847 Bewertungen</span></div>
+      <p style="color:var(--color-muted);font-size:1.05rem">Der Kaffee, der mehr kann. 10 g Whey-Protein, 180 mg Koffein, nur 65 kcal pro Sachet. Ohne Zuckerzusatz, ohne künstliche Süßstoffe, ohne Klumpen.</p>
+      <div class="price">
+        <span class="price-compare">39,99 €</span>
+        <span class="price-current">24,99 €</span>
+        <span class="price-tax">inkl. MwSt., zzgl. Versandkosten · 11,16 €/100 g</span>
+      </div>
+      <a href="product.html" class="btn btn--primary btn--lg" style="display:flex;width:100%">Jetzt 14er-Pack -40% sichern</a>
+      <div class="trust-row">
+        <span>🚚 Heute bestellt – morgen geliefert</span>
+        <span>🔒 Sichere Bezahlung</span>
+        <span>↩ 30 Tage Rückgabe</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how" id="how">
+  <div class="container">
+    <h2 class="section-title">So einfach geht's</h2>
+    <p class="section-sub">Premium Protein-Kaffee in 30 Sekunden – heiß oder kalt</p>
+    <div class="steps">
+      <div class="step"><div class="step__num">1</div><h3>Sachet aufreißen</h3><p>Ein Sachet enthält genau die richtige Menge für 200 ml. Kein Abwiegen, kein Chaos.</p></div>
+      <div class="step"><div class="step__num">2</div><h3>Schütteln oder Rühren</h3><p>Mit Wasser, Milch oder Hafermilch kombinieren. Heiß oder eiskalt – beides schmeckt unfassbar gut.</p></div>
+      <div class="step"><div class="step__num">3</div><h3>Genießen & Power tanken</h3><p>10 g Protein, 180 mg Koffein und ein Café-Geschmack, den du sonst nur im Lieblings-Coffee-Shop bekommst.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials" id="reviews">
+  <div class="container">
+    <h2 class="section-title">Was unsere Kunden sagen</h2>
+    <div class="reviews">
+      <figure class="review"><div class="stars">★★★★★</div><blockquote>"Trinke ihn jeden Morgen vor dem Gym. Schmeckt wie ein richtiger Iced Latte – aber mit 10 g Protein. Game-Changer."</blockquote><figcaption><strong>Marvin S.</strong><span>Berlin · Verifizierter Kauf</span></figcaption></figure>
+      <figure class="review"><div class="stars">★★★★★</div><blockquote>"Endlich ein Protein-Kaffee, der nicht nach Pulver schmeckt. Mein Bürotag startet jetzt komplett anders."</blockquote><figcaption><strong>Lea H.</strong><span>Hamburg · Verifizierter Kauf</span></figcaption></figure>
+      <figure class="review"><div class="stars">★★★★★</div><blockquote>"Hab schon zigtausend Protein-Drinks getestet. Das hier ist der erste, den ich wirklich genieße. 14er-Pack ist nach 10 Tagen leer."</blockquote><figcaption><strong>Yannick W.</strong><span>München · Verifizierter Kauf</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="container">
+    <h2 class="section-title">Häufige Fragen</h2>
+    <div class="faq__list">
+      <details open><summary>Wie schmeckt STIQO Protein Coffee?</summary><div class="faq__answer">Wie ein vollmundiger Café Latte – nicht wie typischer Protein-Drink. Wir nutzen 100% Arabica und ein neuartiges Whey-Verfahren, das den klassischen Pulvergeschmack eliminiert.</div></details>
+      <details><summary>Wie viel Koffein steckt drin?</summary><div class="faq__answer">180 mg pro Sachet – das entspricht ungefähr 2 Espressi. Ideal für den Morgen oder als Pre-Workout.</div></details>
+      <details><summary>Mit welcher Flüssigkeit mixe ich am besten?</summary><div class="faq__answer">Beides funktioniert: Wasser für einen leichteren Americano-Style, Milch oder Hafermilch für einen cremigen Latte. Heiß oder eiskalt – ganz wie du magst.</div></details>
+      <details><summary>Ist das Produkt laktosefrei / vegan?</summary><div class="faq__answer">Unser klassisches Whey enthält Laktose. Eine vegane Variante mit Erbsenprotein findest du als Variante zur Auswahl.</div></details>
+      <details><summary>Wie schnell ist die Lieferung?</summary><div class="faq__answer">Heute bestellt – morgen versendet. Lieferung mit DHL aus unserem Lager in Deutschland in 1–3 Werktagen.</div></details>
+      <details><summary>Kann ich zurückgeben?</summary><div class="faq__answer">Ja, 30 Tage Geld-zurück-Garantie. Wenn dir der Geschmack nicht zusagt, erstatten wir den vollen Betrag.</div></details>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="container">
+    <h2>Starte deinen Morgen mit echtem Power-Kick.</h2>
+    <p>14er-Pack jetzt -40% – nur solange Vorrat reicht.</p>
+    <a href="product.html" class="btn btn--white btn--lg">Jetzt sichern</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-newsletter">
+      <h3>Werde Teil von STIQO</h3>
+      <p>Erhalte 10% Rabatt auf deine erste Bestellung & exklusive Angebote.</p>
+      <form class="newsletter-form" onsubmit="event.preventDefault();alert('Demo: Newsletter-Anmeldung würde hier abgesendet.');">
+        <input type="email" placeholder="E-Mail-Adresse" required>
+        <button type="submit" class="btn btn--primary">Abonnieren</button>
+      </form>
+    </div>
+
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>STIQO</h4>
+        <p>STIQO bringt deinen Morgen auf das nächste Level. Premium Protein-Kaffee mit echtem Café-Geschmack – für alle, die mehr aus jedem Sip wollen.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Rechtliches</h4>
+        <ul>
+          <li><a href="#">Impressum</a></li>
+          <li><a href="#">Datenschutz</a></li>
+          <li><a href="#">AGB</a></li>
+          <li><a href="#">Widerrufsrecht</a></li>
+          <li><a href="#">Versand</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Service</h4>
+        <ul>
+          <li><a href="#">Kontakt</a></li>
+          <li><a href="#">Häufige Fragen</a></li>
+          <li><a href="#">Sendungsverfolgung</a></li>
+          <li><a href="#">Mein Konto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Zahlungsarten</h4>
+        <div class="footer-payments">
+          <span class="payment-badge">Klarna</span>
+          <span class="payment-badge">PayPal</span>
+          <span class="payment-badge">Visa</span>
+          <span class="payment-badge">Mastercard</span>
+          <span class="payment-badge">SOFORT</span>
+          <span class="payment-badge">Apple Pay</span>
+        </div>
+        <p style="font-size:.8rem;margin-top:.5rem;opacity:.7">Sichere Zahlung · SSL 256-bit</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 STIQO. Alle Rechte vorbehalten.</p>
+      <p>Mit Liebe gemacht in Deutschland</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>STIQO Protein Loaded Coffee – 10g Protein, 180mg Koffein | 14er-Pack</title>
+<link rel="stylesheet" href="index.html"><!-- ignored -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --color-primary:#A0522D;--color-secondary:#3E2A1F;--color-accent:#F4ECE2;
+    --color-text:#1F1410;--color-bg:#FFFFFF;--color-muted:#6B5A4F;--color-border:#E8DDD0;
+    --font-body:'Inter',sans-serif;--font-heading:'Playfair Display',serif;
+    --page-width:1280px;--radius:12px;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  body{margin:0;font-family:var(--font-body);color:var(--color-text);background:#fff;line-height:1.6}
+  img{max-width:100%;display:block;height:auto}a{color:inherit;text-decoration:none}
+  button{font:inherit;cursor:pointer;border:0;background:none}
+  h1,h2,h3,h4{font-family:var(--font-heading);margin:0 0 .5em;line-height:1.2}
+  .container{max-width:var(--page-width);margin:0 auto;padding:0 20px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.85rem 1.5rem;border-radius:var(--radius);font-weight:600;transition:.15s;line-height:1}
+  .btn--primary{background:var(--color-primary);color:#fff}
+  .btn--primary:hover{transform:translateY(-1px);filter:brightness(1.05)}
+  .btn--lg{padding:1.05rem 1.75rem;font-size:1.05rem}
+  .btn--block{display:flex;width:100%}
+
+  .preview-bar{background:#FFC857;color:#1F1410;text-align:center;padding:.6rem 1rem;font-size:.85rem}
+  .announcement-bar{background:var(--color-secondary);color:#fff;font-size:.85rem;padding:.55rem 0;text-align:center}
+  .site-header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--color-border)}
+  .site-header__inner{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:1.5rem;padding:1rem 20px;max-width:var(--page-width);margin:0 auto}
+  .logo-text{font-family:var(--font-heading);font-size:1.6rem;font-weight:700;letter-spacing:.18em;color:var(--color-primary)}
+  .site-nav{display:flex;gap:1.75rem;justify-content:center}
+  .site-nav a{font-weight:500}
+  .site-header__actions{display:flex;gap:.5rem;align-items:center}
+  .header-icon{padding:.5rem;border-radius:999px;display:inline-flex}
+
+  .product-page{padding:2.5rem 0 4rem}
+  .product-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:3rem;align-items:start}
+  .gallery img{width:100%;border-radius:var(--radius)}
+  .gallery__thumbs{display:flex;gap:.5rem;margin-top:.75rem;flex-wrap:wrap}
+  .gallery__thumb{width:80px;height:80px;border-radius:8px;overflow:hidden;border:2px solid transparent;cursor:pointer;padding:0}
+  .gallery__thumb.active{border-color:var(--color-primary)}
+  .gallery__thumb img{width:100%;height:100%;object-fit:cover}
+
+  .info__rating{color:var(--color-primary);font-weight:600;margin-bottom:.5rem}
+  .info__rating a{color:var(--color-muted);font-weight:400;margin-left:.5rem;text-decoration:underline}
+  .info__title{font-size:clamp(1.6rem,3vw,2.25rem);margin-bottom:1rem}
+  .info__price{display:flex;gap:.75rem;align-items:center;flex-wrap:wrap;margin-bottom:.25rem}
+  .price-compare{color:var(--color-muted);text-decoration:line-through;font-size:1.1rem}
+  .price-current{color:var(--color-primary);font-size:1.85rem;font-weight:700}
+  .price-badge{background:var(--color-primary);color:#fff;padding:.25rem .5rem;border-radius:6px;font-size:.85rem;font-weight:700}
+  .info__tax{font-size:.85rem;color:var(--color-muted);margin-bottom:1.5rem}
+  .info__short{color:var(--color-muted);margin-bottom:1.5rem}
+
+  .opt{border:0;padding:0;margin:0 0 1.25rem}
+  .opt legend{font-weight:600;margin-bottom:.5rem}
+  .opt__values{display:flex;gap:.5rem;flex-wrap:wrap}
+  .pill{padding:.55rem 1rem;border:2px solid var(--color-border);border-radius:999px;cursor:pointer;background:#fff}
+  .pill.active{border-color:var(--color-primary);background:var(--color-primary);color:#fff}
+
+  .qty-row{display:flex;align-items:center;gap:1rem;margin-bottom:1rem}
+  .qty{display:inline-flex;border:1px solid var(--color-border);border-radius:999px;overflow:hidden}
+  .qty button{padding:.55rem .9rem}
+  .qty input{width:50px;text-align:center;border:0;padding:.55rem 0}
+
+  .stock{font-size:.9rem;color:var(--color-muted);margin-top:.75rem}
+  .trust-list{list-style:none;padding:0;margin:1.5rem 0;display:grid;grid-template-columns:1fr 1fr;gap:.5rem;font-size:.9rem;color:var(--color-muted)}
+  .payments{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;padding-top:1rem;border-top:1px solid var(--color-border);font-size:.85rem;margin-top:.75rem}
+  .payment-badge{padding:.35rem .65rem;background:var(--color-accent);border-radius:6px;font-weight:600;font-size:.75rem;letter-spacing:.03em}
+
+  .description{padding:2.5rem 0;max-width:760px;margin:0 auto}
+  .description h2{margin-bottom:1rem}
+  .description ul{padding-left:1.5rem;color:var(--color-muted)}
+  .description li{margin-bottom:.4rem}
+  .nutri{width:100%;border-collapse:collapse;margin-top:.5rem}
+  .nutri td{padding:.5rem .75rem;border-bottom:1px solid var(--color-border)}
+  .nutri td:last-child{text-align:right;font-weight:600}
+
+  .legal-warning{background:#FFF4E6;border-left:4px solid #A0522D;padding:.75rem 1rem;border-radius:8px;font-size:.85rem;color:#5C3D1E;margin:1.5rem 0}
+
+  .site-footer{background:var(--color-secondary);color:#fff;padding:2rem 0;text-align:center;margin-top:2rem}
+  .site-footer a{color:rgba(255,255,255,.85);text-decoration:underline}
+
+  @media (max-width:860px){.product-grid{grid-template-columns:1fr}.site-nav{display:none}}
+</style>
+</head>
+<body>
+
+<div class="preview-bar">
+  📦 STIQO Preview – Produktseite ·
+  <a href="index.html"><strong>← zurück zur Startseite</strong></a>
+</div>
+
+<div class="announcement-bar">☕ Kostenloser Versand ab 39€ ✦ 30 Tage Geld-zurück-Garantie ✦ Versand aus Deutschland</div>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="index.html"><span class="logo-text">STIQO</span></a>
+    <nav class="site-nav">
+      <a href="index.html">Startseite</a>
+      <a href="product.html">Protein Coffee</a>
+      <a href="index.html#how">So funktioniert's</a>
+      <a href="index.html#reviews">Bewertungen</a>
+      <a href="index.html#faq">FAQ</a>
+    </nav>
+    <div class="site-header__actions">
+      <a href="#" class="header-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </a>
+      <a href="#" class="header-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="product-page">
+  <div class="container product-grid">
+    <div class="gallery">
+      <img id="mainImg" src="https://images.unsplash.com/photo-1517959105821-eaf2591984ca?auto=format&fit=crop&w=1200&q=85" alt="STIQO Protein Coffee Hauptbild">
+      <div class="gallery__thumbs">
+        <button class="gallery__thumb active" data-img="https://images.unsplash.com/photo-1517959105821-eaf2591984ca?auto=format&fit=crop&w=1200&q=85"><img src="https://images.unsplash.com/photo-1517959105821-eaf2591984ca?auto=format&fit=crop&w=200&q=70" alt=""></button>
+        <button class="gallery__thumb" data-img="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=1200&q=85"><img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=200&q=70" alt=""></button>
+        <button class="gallery__thumb" data-img="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=1200&q=85"><img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=200&q=70" alt=""></button>
+        <button class="gallery__thumb" data-img="https://images.unsplash.com/photo-1459755486867-b55449bb39ff?auto=format&fit=crop&w=1200&q=85"><img src="https://images.unsplash.com/photo-1459755486867-b55449bb39ff?auto=format&fit=crop&w=200&q=70" alt=""></button>
+        <button class="gallery__thumb" data-img="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=1200&q=85"><img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=200&q=70" alt=""></button>
+      </div>
+    </div>
+
+    <div class="info">
+      <p class="info__rating">★★★★★ <a href="#">4,9 / 5 · 2.847 Bewertungen</a></p>
+      <h1 class="info__title">STIQO Protein Loaded Coffee – 10 g Protein, 180 mg Koffein</h1>
+
+      <div class="info__price">
+        <span class="price-compare">39,99 €</span>
+        <span class="price-current">24,99 €</span>
+        <span class="price-badge">-37%</span>
+      </div>
+      <p class="info__tax">inkl. MwSt., zzgl. Versand · 11,16 €/100 g · Füllmenge 224 g (14 × 16 g)</p>
+
+      <p class="info__short">Cremiger Café-Latte-Geschmack mit 10 g Whey-Protein und 180 mg Koffein. Heiß oder eiskalt in 30 Sekunden gemixt. Ohne Zuckerzusatz, glutenfrei, Made in Germany.</p>
+
+      <fieldset class="opt">
+        <legend>Geschmack: <strong id="selFlavor">Classic Latte</strong></legend>
+        <div class="opt__values">
+          <button class="pill active" data-set="flavor" data-val="Classic Latte">Classic Latte</button>
+          <button class="pill" data-set="flavor" data-val="Vanille Caramel">Vanille Caramel</button>
+          <button class="pill" data-set="flavor" data-val="Schokolade Mokka">Schokolade Mokka</button>
+          <button class="pill" data-set="flavor" data-val="Hazelnut Cold Brew">Hazelnut Cold Brew</button>
+        </div>
+      </fieldset>
+
+      <fieldset class="opt">
+        <legend>Pack-Größe: <strong id="selSize">14er-Pack</strong></legend>
+        <div class="opt__values">
+          <button class="pill" data-set="size" data-val="7er-Pack" data-price="14,99">7er-Pack</button>
+          <button class="pill active" data-set="size" data-val="14er-Pack" data-price="24,99">14er-Pack ⭐</button>
+          <button class="pill" data-set="size" data-val="30er-Pack" data-price="44,99">30er-Pack</button>
+        </div>
+      </fieldset>
+
+      <fieldset class="opt">
+        <legend>Eiweißquelle: <strong id="selSource">Whey</strong></legend>
+        <div class="opt__values">
+          <button class="pill active" data-set="source" data-val="Whey">Whey</button>
+          <button class="pill" data-set="source" data-val="Vegan (Erbsenprotein)">Vegan (Erbsenprotein)</button>
+        </div>
+      </fieldset>
+
+      <div class="qty-row">
+        <strong>Menge</strong>
+        <div class="qty"><button id="qDown">−</button><input id="qty" type="number" value="1" min="1"><button id="qUp">+</button></div>
+      </div>
+
+      <button class="btn btn--primary btn--lg btn--block" id="atc">In den Warenkorb · <span id="atcPrice">24,99 €</span></button>
+      <p class="stock">⚡ Nur noch wenige verfügbar – aufgrund TikTok-Hype begrenzte Menge</p>
+
+      <ul class="trust-list">
+        <li>🚚 Heute bestellt – morgen versendet</li>
+        <li>🔒 SSL-verschlüsselte Bezahlung</li>
+        <li>↩ 30 Tage Geld-zurück-Garantie</li>
+        <li>🇩🇪 Versand aus Deutschland</li>
+      </ul>
+
+      <div class="payments">
+        <span>Bezahle mit:</span>
+        <span class="payment-badge">Klarna</span>
+        <span class="payment-badge">PayPal</span>
+        <span class="payment-badge">Visa</span>
+        <span class="payment-badge">Mastercard</span>
+        <span class="payment-badge">Apple Pay</span>
+      </div>
+
+      <div class="legal-warning">
+        ⚠ Hoher Koffeingehalt. Für Kinder, Schwangere und Stillende nicht empfohlen (180 mg pro Portion). Enthält <strong>Milch (Laktose)</strong>.
+      </div>
+    </div>
+  </div>
+
+  <div class="container description">
+    <h2>Produktbeschreibung</h2>
+    <p><strong>Der Kaffee, der mehr kann.</strong></p>
+    <p>STIQO Protein Loaded Coffee ist nicht einfach nur Kaffee – es ist dein perfekter Start in den Tag. <strong>10 g hochwertiges Whey-Protein</strong> für Sättigung und Muskelaufbau, <strong>180 mg Koffein</strong> für echten Wachmacher-Effekt, und ein Geschmack wie ein Premium Iced Latte aus deinem Lieblings-Coffee-Shop. Nur 65 kcal pro Portion, ohne Zuckerzusatz, ohne künstliche Süßstoffe.</p>
+
+      <h3>✦ Warum STIQO?</h3>
+      <ul>
+        <li><strong>10 g Whey-Protein</strong> pro Sachet – für Muskeln & Sättigung</li>
+        <li><strong>180 mg Koffein</strong> aus 100% Arabica – mehr Power als 2 Espressi</li>
+        <li><strong>Nur 65 kcal</strong> – ohne Zuckerzusatz, ohne künstliche Süßstoffe</li>
+        <li><strong>Heiß oder kalt</strong> – mit Wasser, Milch oder Hafermilch</li>
+        <li><strong>Klumpenfrei</strong> – löst sich in 30 Sekunden vollständig auf</li>
+        <li><strong>Glutenfrei & laborgeprüft</strong> – Made in Germany</li>
+      </ul>
+
+      <h3>✦ Nährwerte pro Portion (1 Sachet, 16 g)</h3>
+      <table class="nutri">
+        <tr><td>Energie</td><td>65 kcal / 272 kJ</td></tr>
+        <tr><td>Protein</td><td>10 g</td></tr>
+        <tr><td>Kohlenhydrate</td><td>3,2 g (davon Zucker 1,1 g)</td></tr>
+        <tr><td>Fett</td><td>1,1 g</td></tr>
+        <tr><td>Koffein</td><td>180 mg</td></tr>
+        <tr><td>Salz</td><td>0,15 g</td></tr>
+      </table>
+
+      <h3 style="margin-top:2rem">✦ Zutaten</h3>
+      <p>Instantkaffee (100% Arabica) 35%, Molkenproteinkonzentrat 50%, Magermilchpulver, Aroma, Verdickungsmittel: Xanthan, Süßungsmittel: Steviolglycoside.</p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <p>&copy; 2026 STIQO. Alle Rechte vorbehalten. · <a href="index.html">Zurück zur Startseite</a></p>
+</footer>
+
+<script>
+  // gallery
+  document.querySelectorAll('.gallery__thumb').forEach(t=>{
+    t.addEventListener('click',()=>{
+      document.querySelectorAll('.gallery__thumb').forEach(x=>x.classList.remove('active'));
+      t.classList.add('active');
+      document.getElementById('mainImg').src = t.dataset.img;
+    });
+  });
+  // pills
+  const sel = {flavor:'Classic Latte',size:'14er-Pack',source:'Whey'};
+  const price = {'7er-Pack':'14,99','14er-Pack':'24,99','30er-Pack':'44,99'};
+  document.querySelectorAll('.pill').forEach(p=>{
+    p.addEventListener('click',()=>{
+      document.querySelectorAll('.pill[data-set="'+p.dataset.set+'"]').forEach(x=>x.classList.remove('active'));
+      p.classList.add('active');
+      sel[p.dataset.set]=p.dataset.val;
+      const map={flavor:'selFlavor',size:'selSize',source:'selSource'};
+      document.getElementById(map[p.dataset.set]).textContent = p.dataset.val;
+      if(p.dataset.set==='size'){
+        document.getElementById('atcPrice').textContent = price[p.dataset.val] + ' €';
+      }
+    });
+  });
+  // qty
+  document.getElementById('qUp').addEventListener('click',()=>{const i=document.getElementById('qty');i.value=parseInt(i.value)+1;});
+  document.getElementById('qDown').addEventListener('click',()=>{const i=document.getElementById('qty');i.value=Math.max(1,parseInt(i.value)-1);});
+  document.getElementById('atc').addEventListener('click',()=>{
+    alert('Demo: Hier würde "'+sel.flavor+' / '+sel.size+' / '+sel.source+'" in den Warenkorb gelegt werden.');
+  });
+</script>
+</body>
+</html>
