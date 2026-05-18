@@ -1,0 +1,48 @@
+<section class="benefits">
+  <div class="container">
+    {%- if section.settings.title != blank -%}
+      <h2 class="section-title">{{ section.settings.title }}</h2>
+    {%- endif -%}
+    <div class="benefits__grid">
+      {%- for block in section.blocks -%}
+        <div class="benefit-card" {{ block.shopify_attributes }}>
+          <div class="benefit-card__icon">{{ block.settings.icon }}</div>
+          <h3>{{ block.settings.title }}</h3>
+          <p>{{ block.settings.text }}</p>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Vorteile",
+  "max_blocks": 6,
+  "settings": [
+    { "type": "text", "id": "title", "label": "Titel", "default": "Warum STIQO?" }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Vorteil",
+      "settings": [
+        { "type": "text", "id": "icon", "label": "Icon (Emoji)", "default": "✦" },
+        { "type": "text", "id": "title", "label": "Titel", "default": "Vorteil" },
+        { "type": "textarea", "id": "text", "label": "Beschreibung", "default": "Beschreibung deines Vorteils." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Vorteile",
+      "blocks": [
+        { "type": "benefit", "settings": { "icon": "💪", "title": "10 g Protein pro Sachet", "text": "Hochwertiges Whey-Protein für Muskelaufbau und Sättigung – ohne Pulvergeschmack." } },
+        { "type": "benefit", "settings": { "icon": "⚡", "title": "180 mg Koffein", "text": "Echter Wachmacher aus 100% Arabica – mehr Power als ein Espresso." } },
+        { "type": "benefit", "settings": { "icon": "❄️", "title": "Heiß oder Eiskalt", "text": "In Wasser oder Milch – einfach mixen. In 30 Sekunden trinkfertig." } },
+        { "type": "benefit", "settings": { "icon": "🇩🇪", "title": "Versand aus Deutschland", "text": "Heute bestellt, morgen geliefert. Klimaneutral mit DHL." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

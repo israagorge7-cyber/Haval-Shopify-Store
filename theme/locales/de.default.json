@@ -1,0 +1,92 @@
+{
+  "general": {
+    "search": {
+      "title": "Suche",
+      "placeholder": "Wonach suchst du?",
+      "submit": "Suchen",
+      "no_results_html": "Keine Ergebnisse für \"{{ terms }}\".",
+      "results_with_count": {
+        "one": "{{ count }} Ergebnis",
+        "other": "{{ count }} Ergebnisse"
+      }
+    },
+    "404": {
+      "title": "Seite nicht gefunden",
+      "subtext_html": "Die gesuchte Seite existiert leider nicht. <a href=\"/\">Zurück zur Startseite</a>"
+    },
+    "newsletter_form": {
+      "newsletter_email": "E-Mail-Adresse",
+      "submit": "Abonnieren",
+      "confirmation": "Vielen Dank für deine Anmeldung!"
+    },
+    "social": {
+      "alt_text": {
+        "share_on_facebook": "Auf Facebook teilen",
+        "share_on_twitter": "Auf X teilen",
+        "share_on_pinterest": "Auf Pinterest teilen"
+      }
+    },
+    "pagination": {
+      "previous": "Zurück",
+      "next": "Weiter",
+      "page": "Seite"
+    },
+    "accessibility": {
+      "skip_to_content": "Zum Inhalt springen",
+      "close": "Schließen",
+      "menu": "Menü"
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "In den Warenkorb",
+      "buy_it_now": "Jetzt kaufen",
+      "sold_out": "Ausverkauft",
+      "unavailable": "Nicht verfügbar",
+      "quantity": "Menge",
+      "include_taxes": "inkl. MwSt.",
+      "shipping_policy_html": "zzgl. <a href=\"/policies/shipping-policy\">Versandkosten</a>",
+      "vendor": "Marke",
+      "sku": "Artikelnummer",
+      "on_sale": "Angebot",
+      "save_html": "Spare {{ saved_amount }}",
+      "free_shipping": "Kostenloser Versand",
+      "in_stock": "Auf Lager – versandbereit",
+      "low_stock": "Nur noch wenige verfügbar!",
+      "trust_secure": "Sichere SSL-verschlüsselte Bezahlung",
+      "trust_returns": "30 Tage Rückgaberecht",
+      "trust_support": "Deutscher Kundenservice"
+    }
+  },
+  "cart": {
+    "general": {
+      "title": "Warenkorb",
+      "empty": "Dein Warenkorb ist leer",
+      "continue_shopping": "Weiter einkaufen",
+      "subtotal": "Zwischensumme",
+      "shipping_at_checkout": "Versand wird im Checkout berechnet",
+      "checkout": "Zur Kasse",
+      "remove": "Entfernen",
+      "free_shipping_progress_html": "Nur noch {{ amount }} bis zum kostenlosen Versand!",
+      "free_shipping_unlocked": "Glückwunsch – du erhältst Gratisversand!",
+      "note": "Notiz zur Bestellung"
+    }
+  },
+  "contact": {
+    "form": {
+      "name": "Name",
+      "email": "E-Mail",
+      "phone": "Telefon",
+      "message": "Nachricht",
+      "send": "Nachricht senden",
+      "post_success": "Danke! Wir melden uns schnellstmöglich bei dir."
+    }
+  },
+  "footer": {
+    "newsletter_title": "Werde Teil von STIQO",
+    "newsletter_text": "Erhalte 10% Rabatt auf deine erste Bestellung & exklusive Angebote.",
+    "rights": "Alle Rechte vorbehalten.",
+    "secure_payment": "Sichere Zahlung",
+    "made_with_love": "Mit Liebe gemacht in Deutschland"
+  }
+}

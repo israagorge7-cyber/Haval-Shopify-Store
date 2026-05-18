@@ -1,0 +1,68 @@
+<section class="cart-page">
+  <div class="container">
+    <h1>{{ 'cart.general.title' | t }}</h1>
+
+    {%- if cart.item_count == 0 -%}
+      <div class="cart-empty">
+        <p>{{ 'cart.general.empty' | t }}</p>
+        <a href="/collections/all" class="btn btn--primary">{{ 'cart.general.continue_shopping' | t }}</a>
+      </div>
+    {%- else -%}
+      <form action="{{ routes.cart_url }}" method="post" novalidate class="cart-form">
+        <table class="cart-table">
+          <thead>
+            <tr>
+              <th>Produkt</th>
+              <th>Preis</th>
+              <th>Menge</th>
+              <th>Gesamt</th>
+            </tr>
+          </thead>
+          <tbody>
+            {%- for item in cart.items -%}
+              <tr>
+                <td class="cart-item">
+                  <img src="{{ item.image | image_url: width: 160 }}" alt="{{ item.title | escape }}" width="80" height="80">
+                  <div>
+                    <a href="{{ item.url }}"><strong>{{ item.product.title }}</strong></a>
+                    {% unless item.product.has_only_default_variant %}<p>{{ item.variant.title }}</p>{% endunless %}
+                  </div>
+                </td>
+                <td>{{ item.original_price | money }}</td>
+                <td>
+                  <div class="qty-input">
+                    <a href="{{ item.url_to_remove_one }}" aria-label="weniger">−</a>
+                    <input type="number" name="updates[]" value="{{ item.quantity }}" min="0" data-line="{{ forloop.index }}">
+                    <a href="{{ item.url_to_add }}" aria-label="mehr">+</a>
+                  </div>
+                </td>
+                <td>{{ item.final_line_price | money }}</td>
+              </tr>
+            {%- endfor -%}
+          </tbody>
+        </table>
+
+        <div class="cart-foot">
+          <div class="cart-note">
+            <label for="CartNote">{{ 'cart.general.note' | t }}</label>
+            <textarea name="note" id="CartNote">{{ cart.note }}</textarea>
+          </div>
+          <div class="cart-summary">
+            <p class="cart-subtotal">{{ 'cart.general.subtotal' | t }}: <strong>{{ cart.total_price | money }}</strong></p>
+            <p class="cart-shipping">{{ 'cart.general.shipping_at_checkout' | t }}</p>
+            <button type="submit" name="checkout" class="btn btn--primary btn--lg btn--block">
+              {{ 'cart.general.checkout' | t }}
+            </button>
+          </div>
+        </div>
+      </form>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Warenkorb",
+  "settings": []
+}
+{% endschema %}

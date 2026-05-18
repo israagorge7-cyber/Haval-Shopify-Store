@@ -1,0 +1,48 @@
+<section class="testimonials">
+  <div class="container">
+    <h2 class="section-title">{{ section.settings.title }}</h2>
+    <div class="testimonials__grid">
+      {%- for block in section.blocks -%}
+        <figure class="testimonial-card" {{ block.shopify_attributes }}>
+          <div class="testimonial-card__stars">★★★★★</div>
+          <blockquote>{{ block.settings.quote }}</blockquote>
+          <figcaption>
+            <strong>{{ block.settings.name }}</strong>
+            <span>{{ block.settings.location }} · Verifizierter Kauf</span>
+          </figcaption>
+        </figure>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Bewertungen",
+  "max_blocks": 9,
+  "settings": [
+    { "type": "text", "id": "title", "label": "Titel", "default": "Was unsere Kunden sagen" }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Bewertung",
+      "settings": [
+        { "type": "textarea", "id": "quote", "label": "Zitat" },
+        { "type": "text", "id": "name", "label": "Name" },
+        { "type": "text", "id": "location", "label": "Stadt" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bewertungen",
+      "blocks": [
+        { "type": "review", "settings": { "quote": "Trinke ihn jeden Morgen vor dem Gym. Schmeckt wie ein richtiger Iced Latte – aber mit 10 g Protein. Game-Changer.", "name": "Marvin S.", "location": "Berlin" } },
+        { "type": "review", "settings": { "quote": "Endlich ein Protein-Kaffee, der nicht nach Pulver schmeckt. Mein Bürotag startet jetzt komplett anders.", "name": "Lea H.", "location": "Hamburg" } },
+        { "type": "review", "settings": { "quote": "Hab schon zigtausend Protein-Drinks getestet. Das hier ist der erste, den ich wirklich genieße. 14er-Pack ist nach 10 Tagen leer.", "name": "Yannick W.", "location": "München" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

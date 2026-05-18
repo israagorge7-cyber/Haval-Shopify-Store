@@ -1,0 +1,14 @@
+{
+  "type": "header",
+  "name": "Header-Gruppe",
+  "sections": {
+    "header": {
+      "type": "header",
+      "settings": {
+        "announcement_text": "☕ Kostenloser Versand ab 39€ ✦ 30 Tage Geld-zurück-Garantie ✦ Versand aus Deutschland",
+        "menu": "main-menu"
+      }
+    }
+  },
+  "order": ["header"]
+}
