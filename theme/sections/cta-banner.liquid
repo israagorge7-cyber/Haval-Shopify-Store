@@ -1,0 +1,24 @@
+<section class="cta-banner" style="background:{{ section.settings.bg }};color:{{ section.settings.color }}">
+  <div class="container cta-banner__inner">
+    <div>
+      <h2>{{ section.settings.title }}</h2>
+      <p>{{ section.settings.subtitle }}</p>
+    </div>
+    <a href="{{ section.settings.link }}" class="btn btn--white btn--lg">{{ section.settings.button }}</a>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CTA Banner",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Titel", "default": "Heute bestellt – morgen verbunden." },
+    { "type": "text", "id": "subtitle", "label": "Untertitel", "default": "Spare 50% – nur solange Vorrat reicht." },
+    { "type": "text", "id": "button", "label": "Button", "default": "Jetzt sichern" },
+    { "type": "url", "id": "link", "label": "Link" },
+    { "type": "color", "id": "bg", "label": "Hintergrund", "default": "#1D3557" },
+    { "type": "color", "id": "color", "label": "Textfarbe", "default": "#FFFFFF" }
+  ],
+  "presets": [{ "name": "CTA Banner" }]
+}
+{% endschema %}

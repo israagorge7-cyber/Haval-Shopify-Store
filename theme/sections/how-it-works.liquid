@@ -1,0 +1,47 @@
+<section class="how-it-works" id="how">
+  <div class="container">
+    <h2 class="section-title">{{ section.settings.title }}</h2>
+    <p class="section-sub">{{ section.settings.subtitle }}</p>
+
+    <div class="steps">
+      {%- for block in section.blocks -%}
+        <div class="step" {{ block.shopify_attributes }}>
+          <div class="step__num">{{ forloop.index }}</div>
+          <h3>{{ block.settings.title }}</h3>
+          <p>{{ block.settings.text }}</p>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "So funktioniert's",
+  "max_blocks": 4,
+  "settings": [
+    { "type": "text", "id": "title", "label": "Titel", "default": "So einfach geht's" },
+    { "type": "text", "id": "subtitle", "label": "Untertitel", "default": "Premium Protein-Kaffee in 30 Sekunden – heiß oder kalt" }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Schritt",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Titel" },
+        { "type": "textarea", "id": "text", "label": "Text" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "So funktioniert's",
+      "blocks": [
+        { "type": "step", "settings": { "title": "Sachet aufreißen", "text": "Ein Sachet enthält genau die richtige Menge für 200 ml. Kein Abwiegen, kein Chaos." } },
+        { "type": "step", "settings": { "title": "Schütteln oder Rühren", "text": "Mit Wasser, Milch oder Hafermilch kombinieren. Heiß oder eiskalt – beides schmeckt unfassbar gut." } },
+        { "type": "step", "settings": { "title": "Genießen & Power tanken", "text": "10 g Protein, 180 mg Koffein und ein Café-Geschmack, den du sonst nur im Lieblings-Coffee-Shop bekommst." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

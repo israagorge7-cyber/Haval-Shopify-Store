@@ -1,0 +1,85 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "eyebrow": "TikTok Bestseller ✦ #1 Protein-Kaffee in Deutschland",
+        "title": "10 g Protein. 180 mg Koffein. 0 g Kompromiss.",
+        "subtitle": "STIQO Protein Loaded Coffee – dein Kaffee-Kick mit echtem Protein-Boost. Heiß oder kalt in 30 Sekunden gemixt. Perfekt für Gym, Office und alle, die mehr aus ihrem Morgen holen wollen.",
+        "primary_label": "Jetzt -40% sichern",
+        "primary_link": "/products/stiqo-protein-coffee",
+        "secondary_label": "So funktioniert's",
+        "secondary_link": "#how",
+        "bg": "#F4ECE2"
+      }
+    },
+    "benefits": {
+      "type": "benefits",
+      "settings": { "title": "Warum STIQO?" },
+      "blocks": {
+        "b1": { "type": "benefit", "settings": { "icon": "💪", "title": "10 g Protein pro Sachet", "text": "Hochwertiges Whey-Protein für Muskelaufbau und Sättigung – ohne Shaker-Klumpen." } },
+        "b2": { "type": "benefit", "settings": { "icon": "⚡", "title": "180 mg Koffein", "text": "Echter Wachmacher aus 100% Arabica – mehr Power als ein Espresso." } },
+        "b3": { "type": "benefit", "settings": { "icon": "❄️", "title": "Heiß oder Eiskalt", "text": "In Wasser oder Milch – einfach mixen. In 30 Sekunden trinkfertig." } },
+        "b4": { "type": "benefit", "settings": { "icon": "🇩🇪", "title": "Versand aus Deutschland", "text": "Heute bestellt, morgen geliefert. Klimaneutral mit DHL." } }
+      },
+      "block_order": ["b1", "b2", "b3", "b4"]
+    },
+    "featured-product": {
+      "type": "featured-product",
+      "settings": {
+        "eyebrow": "★ Viral auf TikTok – über 8 Millionen Views",
+        "title": "STIQO Protein Loaded Coffee",
+        "description": "Der Kaffee, der mehr kann. 10 g Whey-Protein, 180 mg Koffein, nur 65 kcal pro Sachet. Ohne Zuckerzusatz, ohne künstliche Süßstoffe, ohne Verklumpen. Einfach Sachet aufreißen, in 200 ml Wasser oder Milch geben, schütteln – fertig.",
+        "button_label": "Jetzt 14er-Pack -40% sichern"
+      }
+    },
+    "how": {
+      "type": "how-it-works",
+      "settings": {
+        "title": "So einfach geht's",
+        "subtitle": "Premium Protein-Kaffee in 30 Sekunden – heiß oder kalt"
+      },
+      "blocks": {
+        "s1": { "type": "step", "settings": { "title": "Sachet aufreißen", "text": "Ein Sachet enthält genau die richtige Menge für 200 ml. Kein Abwiegen, kein Chaos." } },
+        "s2": { "type": "step", "settings": { "title": "Schütteln oder Rühren", "text": "Mit Wasser, Milch oder Hafermilch kombinieren. Heiß oder eiskalt – beides schmeckt unfassbar gut." } },
+        "s3": { "type": "step", "settings": { "title": "Genießen & Power tanken", "text": "10 g Protein, 180 mg Koffein und ein Café-Geschmack, den du sonst nur im Lieblings-Coffee-Shop bekommst." } }
+      },
+      "block_order": ["s1", "s2", "s3"]
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "settings": { "title": "Was unsere Kunden sagen" },
+      "blocks": {
+        "t1": { "type": "review", "settings": { "quote": "Trinke ihn jeden Morgen vor dem Gym. Schmeckt wie ein richtiger Iced Latte – aber mit 10 g Protein. Game-Changer.", "name": "Marvin S.", "location": "Berlin" } },
+        "t2": { "type": "review", "settings": { "quote": "Endlich ein Protein-Kaffee, der nicht nach Pulver schmeckt. Mein Bürotag startet jetzt komplett anders.", "name": "Lea H.", "location": "Hamburg" } },
+        "t3": { "type": "review", "settings": { "quote": "Hab schon zigtausend Protein-Drinks getestet. Das hier ist der erste, den ich wirklich genieße. 14er-Pack ist nach 10 Tagen leer 😅", "name": "Yannick W.", "location": "München" } }
+      },
+      "block_order": ["t1", "t2", "t3"]
+    },
+    "faq": {
+      "type": "faq",
+      "settings": { "title": "Häufige Fragen" },
+      "blocks": {
+        "q1": { "type": "qa", "settings": { "question": "Wie schmeckt STIQO Protein Coffee?", "answer": "<p>Wie ein vollmundiger Café Latte – nicht wie typischer Protein-Drink. Wir nutzen 100% Arabica und ein neuartiges Whey-Verfahren, das den klassischen Pulvergeschmack komplett eliminiert.</p>" } },
+        "q2": { "type": "qa", "settings": { "question": "Wie viel Koffein steckt drin?", "answer": "<p>180 mg pro Sachet – das entspricht ungefähr 2 Espressi. Ideal für den Morgen oder als Pre-Workout.</p>" } },
+        "q3": { "type": "qa", "settings": { "question": "Mit welcher Flüssigkeit mixe ich am besten?", "answer": "<p>Beides funktioniert: <strong>Wasser</strong> für einen leichteren Americano-Style, <strong>Milch oder Hafermilch</strong> für einen cremigen Latte. Heiß oder eiskalt – ganz wie du magst.</p>" } },
+        "q4": { "type": "qa", "settings": { "question": "Ist das Produkt laktosefrei / vegan?", "answer": "<p>Unser klassisches Whey enthält Laktose. Eine <strong>vegane Variante mit Erbsenprotein</strong> findest du als Variante zur Auswahl.</p>" } },
+        "q5": { "type": "qa", "settings": { "question": "Wie schnell ist die Lieferung?", "answer": "<p>Heute bestellt – morgen versendet. Lieferung mit DHL aus unserem Lager in Deutschland in 1–3 Werktagen.</p>" } },
+        "q6": { "type": "qa", "settings": { "question": "Kann ich zurückgeben?", "answer": "<p>Ja, 30 Tage Geld-zurück-Garantie. Wenn dir der Geschmack nicht zusagt, erstatten wir den vollen Betrag – auch bei angebrochener Verpackung.</p>" } }
+      },
+      "block_order": ["q1", "q2", "q3", "q4", "q5", "q6"]
+    },
+    "cta": {
+      "type": "cta-banner",
+      "settings": {
+        "title": "Starte deinen Morgen mit echtem Power-Kick.",
+        "subtitle": "14er-Pack jetzt -40% – nur solange Vorrat reicht.",
+        "button": "Jetzt sichern",
+        "link": "/products/stiqo-protein-coffee",
+        "bg": "#1D3557",
+        "color": "#FFFFFF"
+      }
+    }
+  },
+  "order": ["hero", "benefits", "featured-product", "how", "testimonials", "faq", "cta"]
+}

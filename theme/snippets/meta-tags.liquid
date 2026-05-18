@@ -1,0 +1,15 @@
+<meta property="og:site_name" content="{{ shop.name }}">
+<meta property="og:url" content="{{ canonical_url }}">
+<meta property="og:title" content="{{ page_title }}">
+<meta property="og:type" content="{% if template contains 'product' %}product{% elsif template contains 'article' %}article{% else %}website{% endif %}">
+<meta property="og:locale" content="de_DE">
+{%- if page_description -%}
+  <meta property="og:description" content="{{ page_description | escape }}">
+{%- endif -%}
+
+{%- if template contains 'product' and product.featured_image -%}
+  <meta property="og:image" content="https:{{ product.featured_image | image_url: width: 1200 }}">
+  <meta name="twitter:card" content="summary_large_image">
+{%- endif -%}
+
+<meta name="twitter:site" content="@stiqo">

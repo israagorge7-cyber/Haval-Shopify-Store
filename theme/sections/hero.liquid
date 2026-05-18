@@ -1,0 +1,61 @@
+<section class="hero" style="background-color: {{ section.settings.bg }};">
+  <div class="container hero__inner">
+    <div class="hero__content">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="hero__eyebrow">{{ section.settings.eyebrow }}</span>
+      {%- endif -%}
+      <h1 class="hero__title">{{ section.settings.title }}</h1>
+      <p class="hero__subtitle">{{ section.settings.subtitle }}</p>
+
+      <div class="hero__ctas">
+        {%- if section.settings.primary_label != blank -%}
+          <a href="{{ section.settings.primary_link }}" class="btn btn--primary btn--lg">
+            {{ section.settings.primary_label }}
+          </a>
+        {%- endif -%}
+        {%- if section.settings.secondary_label != blank -%}
+          <a href="{{ section.settings.secondary_link }}" class="btn btn--ghost btn--lg">
+            {{ section.settings.secondary_label }}
+          </a>
+        {%- endif -%}
+      </div>
+
+      <ul class="hero__bullets">
+        <li>★★★★★ Über 12.000 zufriedene Kunden in Deutschland</li>
+        <li>☕ 10 g Protein · 180 mg Koffein · nur 65 kcal</li>
+        <li>🇩🇪 Versand aus Deutschland in 24h</li>
+      </ul>
+    </div>
+
+    <div class="hero__media">
+      {%- if section.settings.image != blank -%}
+        <img src="{{ section.settings.image | image_url: width: 1200 }}"
+             alt="{{ section.settings.title | escape }}"
+             width="600" height="600" loading="eager"
+             class="hero__image">
+      {%- else -%}
+        <div class="hero__placeholder">{{ 'collection-1' | placeholder_svg_tag }}</div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow-Text", "default": "TikTok Bestseller ✦ #1 Protein-Kaffee in Deutschland" },
+    { "type": "text", "id": "title", "label": "Titel", "default": "10 g Protein. 180 mg Koffein. 0 g Kompromiss." },
+    { "type": "textarea", "id": "subtitle", "label": "Untertitel", "default": "STIQO Protein Loaded Coffee – dein Kaffee-Kick mit echtem Protein-Boost. Heiß oder kalt in 30 Sekunden gemixt. Perfekt für Gym, Office und alle, die mehr aus ihrem Morgen holen wollen." },
+    { "type": "text", "id": "primary_label", "label": "CTA Text", "default": "Jetzt -40% sichern" },
+    { "type": "url", "id": "primary_link", "label": "CTA Link" },
+    { "type": "text", "id": "secondary_label", "label": "Sekundärer CTA", "default": "So funktioniert's" },
+    { "type": "url", "id": "secondary_link", "label": "Sekundärer Link" },
+    { "type": "image_picker", "id": "image", "label": "Hero Bild" },
+    { "type": "color", "id": "bg", "label": "Hintergrund", "default": "#F4ECE2" }
+  ],
+  "presets": [
+    { "name": "Hero" }
+  ]
+}
+{% endschema %}

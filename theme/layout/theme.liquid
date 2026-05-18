@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="de" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="{{ settings.color_primary }}">
+    <link rel="canonical" href="{{ canonical_url }}">
+
+    {%- if settings.favicon != blank -%}
+      <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
+    {%- endif -%}
+
+    <title>
+      {{ page_title }}{% if current_tags %} – {{ current_tags | join: ', ' }}{% endif %}{% if current_page != 1 %} – Seite {{ current_page }}{% endif %}{% unless page_title contains shop.name %} – {{ shop.name }}{% endunless %}
+    </title>
+
+    {%- if page_description -%}
+      <meta name="description" content="{{ page_description | escape }}">
+    {%- endif -%}
+
+    {% render 'meta-tags' %}
+
+    {{ content_for_header }}
+
+    {%- liquid
+      assign body_font = settings.font_body
+      assign heading_font = settings.font_heading
+      assign body_font_bold = body_font | font_modify: 'weight', 'bold'
+      assign heading_font_bold = heading_font | font_modify: 'weight', 'bold'
+    -%}
+
+    {{ body_font | font_face: font_display: 'swap' }}
+    {{ body_font_bold | font_face: font_display: 'swap' }}
+    {{ heading_font | font_face: font_display: 'swap' }}
+    {{ heading_font_bold | font_face: font_display: 'swap' }}
+
+    <style>
+      :root {
+        --color-primary: {{ settings.color_primary }};
+        --color-secondary: {{ settings.color_secondary }};
+        --color-accent: {{ settings.color_accent }};
+        --color-text: {{ settings.color_text }};
+        --color-bg: {{ settings.color_background }};
+        --color-muted: {{ settings.color_muted }};
+        --color-border: {{ settings.color_border }};
+        --font-body: {{ body_font.family }}, {{ body_font.fallback_families }};
+        --font-heading: {{ heading_font.family }}, {{ heading_font.fallback_families }};
+        --page-width: {{ settings.page_width }}px;
+        --radius: {{ settings.border_radius }}px;
+      }
+    </style>
+
+    {{ 'theme.css' | asset_url | stylesheet_tag }}
+
+    <script>
+      document.documentElement.classList.remove('no-js');
+      document.documentElement.classList.add('js');
+      window.STIQO = {
+        moneyFormat: {{ shop.money_format | json }},
+        routes: {
+          cart_add_url: '{{ routes.cart_add_url }}',
+          cart_change_url: '{{ routes.cart_change_url }}',
+          cart_url: '{{ routes.cart_url }}',
+          cart_get_url: '{{ routes.cart_url }}.js'
+        },
+        freeShipping: {
+          enabled: {{ settings.free_shipping_enabled | json }},
+          threshold: {{ settings.free_shipping_threshold | default: 0 }}
+        }
+      };
+    </script>
+  </head>
+
+  <body class="template-{{ template | replace: '.', '-' | handle }}">
+    <a class="skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
+
+    {% sections 'header-group' %}
+
+    <main id="MainContent" role="main">
+      {{ content_for_layout }}
+    </main>
+
+    {% sections 'footer-group' %}
+
+    {% render 'cart-drawer' %}
+
+    <script src="{{ 'theme.js' | asset_url }}" defer></script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "sections": {
+    "main": { "type": "main-product" },
+    "trust": {
+      "type": "benefits",
+      "settings": { "title": "Warum bei STIQO bestellen?" },
+      "blocks": {
+        "b1": { "type": "benefit", "settings": { "icon": "🇩🇪", "title": "Versand aus Deutschland", "text": "Lieferung in 1–3 Werktagen mit DHL." } },
+        "b2": { "type": "benefit", "settings": { "icon": "💳", "title": "Sicher bezahlen", "text": "Klarna · PayPal · Apple Pay · Kreditkarte." } },
+        "b3": { "type": "benefit", "settings": { "icon": "↩︎", "title": "30 Tage Rückgabe", "text": "Geld-zurück-Garantie ohne Wenn und Aber." } },
+        "b4": { "type": "benefit", "settings": { "icon": "🔬", "title": "Laborgeprüft", "text": "Made in Germany, hergestellt nach DIN-Standards." } }
+      },
+      "block_order": ["b1", "b2", "b3", "b4"]
+    },
+    "testimonials": { "type": "testimonials" },
+    "faq": { "type": "faq" }
+  },
+  "order": ["main", "trust", "testimonials", "faq"]
+}

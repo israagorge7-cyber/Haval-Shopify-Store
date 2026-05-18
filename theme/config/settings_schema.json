@@ -1,0 +1,57 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "STIQO",
+    "theme_version": "1.0.0",
+    "theme_author": "STIQO",
+    "theme_documentation_url": "https://stiqo.de",
+    "theme_support_url": "mailto:support@stiqo.de"
+  },
+  {
+    "name": "Farben",
+    "settings": [
+      { "type": "color", "id": "color_primary", "label": "Primärfarbe", "default": "#E63946" },
+      { "type": "color", "id": "color_secondary", "label": "Sekundärfarbe", "default": "#1D3557" },
+      { "type": "color", "id": "color_accent", "label": "Akzentfarbe", "default": "#F1FAEE" },
+      { "type": "color", "id": "color_text", "label": "Textfarbe", "default": "#0F172A" },
+      { "type": "color", "id": "color_background", "label": "Hintergrund", "default": "#FFFFFF" },
+      { "type": "color", "id": "color_muted", "label": "Gedämpfter Text", "default": "#64748B" },
+      { "type": "color", "id": "color_border", "label": "Rahmenfarbe", "default": "#E2E8F0" }
+    ]
+  },
+  {
+    "name": "Typografie",
+    "settings": [
+      { "type": "font_picker", "id": "font_heading", "label": "Überschrift-Schriftart", "default": "playfair_display_n7" },
+      { "type": "font_picker", "id": "font_body", "label": "Fließtext-Schriftart", "default": "inter_n4" }
+    ]
+  },
+  {
+    "name": "Layout",
+    "settings": [
+      { "type": "range", "id": "page_width", "label": "Seitenbreite (px)", "min": 1100, "max": 1600, "step": 20, "default": 1280 },
+      { "type": "range", "id": "border_radius", "label": "Eckenradius (px)", "min": 0, "max": 24, "step": 2, "default": 12 }
+    ]
+  },
+  {
+    "name": "Versand",
+    "settings": [
+      { "type": "checkbox", "id": "free_shipping_enabled", "label": "Gratisversand-Banner anzeigen", "default": true },
+      { "type": "number", "id": "free_shipping_threshold", "label": "Gratisversand ab (in Cent, z.B. 5000 = 50€)", "default": 5000 }
+    ]
+  },
+  {
+    "name": "Social Media",
+    "settings": [
+      { "type": "url", "id": "social_instagram", "label": "Instagram URL" },
+      { "type": "url", "id": "social_tiktok", "label": "TikTok URL" },
+      { "type": "url", "id": "social_facebook", "label": "Facebook URL" }
+    ]
+  },
+  {
+    "name": "Favicon",
+    "settings": [
+      { "type": "image_picker", "id": "favicon", "label": "Favicon (32x32)" }
+    ]
+  }
+]

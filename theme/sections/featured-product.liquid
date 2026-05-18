@@ -1,0 +1,64 @@
+{%- assign product = all_products[section.settings.product] -%}
+
+<section class="featured-product">
+  <div class="container featured-product__inner">
+    <div class="featured-product__media">
+      {%- if product.featured_image -%}
+        <img src="{{ product.featured_image | image_url: width: 900 }}"
+             alt="{{ product.title | escape }}"
+             width="600" height="600" loading="lazy">
+      {%- else -%}
+        {{ 'product-1' | placeholder_svg_tag: 'placeholder' }}
+      {%- endif -%}
+    </div>
+
+    <div class="featured-product__content">
+      <span class="hero__eyebrow">{{ section.settings.eyebrow }}</span>
+      <h2>{{ section.settings.title | default: product.title }}</h2>
+
+      <div class="featured-product__rating">
+        ★★★★★ <span>4,9 / 5 · 2.847 Bewertungen</span>
+      </div>
+
+      <p class="featured-product__desc">
+        {{ section.settings.description | default: product.description | truncatewords: 40 }}
+      </p>
+
+      {%- if product != blank -%}
+        <div class="featured-product__price">
+          {%- if product.compare_at_price > product.price -%}
+            <span class="price-compare">{{ product.compare_at_price | money }}</span>
+          {%- endif -%}
+          <span class="price-current">{{ product.price | money }}</span>
+          <span class="price-tax">{{ 'products.product.include_taxes' | t }}, {{ 'products.product.shipping_policy_html' | t }}</span>
+        </div>
+
+        <a href="{{ product.url }}" class="btn btn--primary btn--lg btn--block">
+          {{ section.settings.button_label }}
+        </a>
+      {%- else -%}
+        <a href="/products/stiqo-protein-coffee" class="btn btn--primary btn--lg btn--block">{{ section.settings.button_label }}</a>
+      {%- endif -%}
+
+      <div class="trust-row">
+        <span>🚚 Heute bestellt – morgen geliefert</span>
+        <span>🔒 Sichere Bezahlung</span>
+        <span>↩ 30 Tage Rückgabe</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Produkt-Highlight",
+  "settings": [
+    { "type": "product", "id": "product", "label": "Produkt auswählen" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "★ Viral auf TikTok – über 8 Millionen Views" },
+    { "type": "text", "id": "title", "label": "Titel", "default": "STIQO Protein Loaded Coffee" },
+    { "type": "textarea", "id": "description", "label": "Beschreibung", "default": "Der Kaffee, der mehr kann. 10 g Whey-Protein, 180 mg Koffein, nur 65 kcal pro Sachet. Ohne Zuckerzusatz, ohne Klumpen, ohne Kompromisse." },
+    { "type": "text", "id": "button_label", "label": "Button-Text", "default": "Jetzt -40% sichern" }
+  ],
+  "presets": [{ "name": "Produkt-Highlight" }]
+}
+{% endschema %}

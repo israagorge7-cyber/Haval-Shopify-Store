@@ -1,0 +1,144 @@
+<section class="product-page">
+  <div class="container product-page__grid">
+    <div class="product-gallery">
+      <div class="product-gallery__main">
+        {%- if product.featured_image -%}
+          <img id="ProductMainImage"
+               src="{{ product.featured_image | image_url: width: 1200 }}"
+               alt="{{ product.featured_image.alt | default: product.title | escape }}"
+               width="800" height="800">
+        {%- else -%}
+          {{ 'product-1' | placeholder_svg_tag: 'placeholder' }}
+        {%- endif -%}
+      </div>
+      {%- if product.images.size > 1 -%}
+        <div class="product-gallery__thumbs">
+          {%- for image in product.images -%}
+            <button type="button"
+                    class="product-gallery__thumb {% if forloop.first %}is-active{% endif %}"
+                    data-thumb
+                    data-image="{{ image | image_url: width: 1200 }}">
+              <img src="{{ image | image_url: width: 200 }}"
+                   alt="{{ image.alt | escape }}"
+                   width="80" height="80" loading="lazy">
+            </button>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div class="product-info">
+      <div class="product-info__rating">
+        ★★★★★ <a href="#reviews">4,9 / 5 · 2.847 Bewertungen</a>
+      </div>
+
+      <h1 class="product-info__title">{{ product.title }}</h1>
+
+      <div class="product-info__price">
+        {%- if product.compare_at_price > product.price -%}
+          <span class="price-compare">{{ product.compare_at_price | money }}</span>
+          <span class="price-current">{{ product.price | money }}</span>
+          <span class="price-badge">
+            {%- assign saved = product.compare_at_price | minus: product.price -%}
+            -{{ saved | times: 100 | divided_by: product.compare_at_price }}%
+          </span>
+        {%- else -%}
+          <span class="price-current">{{ product.price | money }}</span>
+        {%- endif -%}
+      </div>
+      <p class="product-info__tax">{{ 'products.product.include_taxes' | t }}, {{ 'products.product.shipping_policy_html' | t }}</p>
+
+      <div class="product-info__short">
+        {{ product.description | split: '<!-- split -->' | first }}
+      </div>
+
+      <form action="{{ routes.cart_add_url }}" method="post" enctype="multipart/form-data" class="product-form" data-product-form>
+        {%- unless product.has_only_default_variant -%}
+          {%- for option in product.options_with_values -%}
+            <fieldset class="product-form__option">
+              <legend>{{ option.name }}: <strong data-selected-{{ forloop.index }}>{{ option.selected_value }}</strong></legend>
+              <div class="product-form__values">
+                {%- for value in option.values -%}
+                  <label class="variant-pill {% if option.selected_value == value %}is-active{% endif %}">
+                    <input type="radio"
+                           name="options[{{ option.name | escape }}]"
+                           value="{{ value | escape }}"
+                           {% if option.selected_value == value %}checked{% endif %}
+                           data-option-input>
+                    <span>{{ value }}</span>
+                  </label>
+                {%- endfor -%}
+              </div>
+            </fieldset>
+          {%- endfor -%}
+        {%- endunless -%}
+
+        <select name="id" data-variant-select class="visually-hidden">
+          {%- for variant in product.variants -%}
+            <option value="{{ variant.id }}"
+                    {% if variant == product.selected_or_first_available_variant %}selected{% endif %}
+                    {% unless variant.available %}disabled{% endunless %}>
+              {{ variant.title }} – {{ variant.price | money }}
+            </option>
+          {%- endfor -%}
+        </select>
+
+        <div class="product-form__quantity">
+          <label for="Quantity">{{ 'products.product.quantity' | t }}</label>
+          <div class="qty-input">
+            <button type="button" data-qty-down aria-label="weniger">−</button>
+            <input type="number" name="quantity" id="Quantity" value="1" min="1">
+            <button type="button" data-qty-up aria-label="mehr">+</button>
+          </div>
+        </div>
+
+        <button type="submit"
+                class="btn btn--primary btn--lg btn--block product-form__submit"
+                data-add-to-cart
+                {% unless product.selected_or_first_available_variant.available %}disabled{% endunless %}>
+          {%- if product.selected_or_first_available_variant.available -%}
+            {{ 'products.product.add_to_cart' | t }} – {{ product.selected_or_first_available_variant.price | money }}
+          {%- else -%}
+            {{ 'products.product.sold_out' | t }}
+          {%- endif -%}
+        </button>
+
+        <p class="product-form__stock">
+          {%- if product.selected_or_first_available_variant.inventory_quantity > 0 and product.selected_or_first_available_variant.inventory_quantity < 20 -%}
+            ⚡ {{ 'products.product.low_stock' | t }} (nur noch {{ product.selected_or_first_available_variant.inventory_quantity }} Stück)
+          {%- else -%}
+            ✓ {{ 'products.product.in_stock' | t }}
+          {%- endif -%}
+        </p>
+      </form>
+
+      <ul class="product-trust">
+        <li>🚚 Heute bestellt – morgen versendet</li>
+        <li>🔒 {{ 'products.product.trust_secure' | t }}</li>
+        <li>↩ {{ 'products.product.trust_returns' | t }}</li>
+        <li>🇩🇪 {{ 'products.product.trust_support' | t }}</li>
+      </ul>
+
+      <div class="product-payments">
+        <span>Bezahle mit:</span>
+        <span class="payment-badge">Klarna</span>
+        <span class="payment-badge">PayPal</span>
+        <span class="payment-badge">Visa</span>
+        <span class="payment-badge">Mastercard</span>
+        <span class="payment-badge">Apple Pay</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container product-description">
+    <h2>Produktbeschreibung</h2>
+    {{ product.description }}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Produkt",
+  "settings": []
+}
+{% endschema %}

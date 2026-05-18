@@ -1,0 +1,85 @@
+<footer class="site-footer">
+  <div class="container">
+    {%- if section.settings.show_newsletter -%}
+      <div class="footer-newsletter">
+        <h3>{{ 'footer.newsletter_title' | t }}</h3>
+        <p>{{ 'footer.newsletter_text' | t }}</p>
+        {% form 'customer', class: 'newsletter-form' %}
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          <input type="email" name="contact[email]" placeholder="{{ 'general.newsletter_form.newsletter_email' | t }}" required>
+          <button type="submit" class="btn btn--primary">{{ 'general.newsletter_form.submit' | t }}</button>
+          {%- if form.posted_successfully? -%}
+            <p class="form-success">{{ 'general.newsletter_form.confirmation' | t }}</p>
+          {%- endif -%}
+        {% endform %}
+      </div>
+    {%- endif -%}
+
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>STIQO</h4>
+        <p>{{ section.settings.about_text }}</p>
+        <div class="footer-social">
+          {%- if settings.social_instagram != blank -%}
+            <a href="{{ settings.social_instagram }}" aria-label="Instagram">{% render 'icon', name: 'instagram' %}</a>
+          {%- endif -%}
+          {%- if settings.social_tiktok != blank -%}
+            <a href="{{ settings.social_tiktok }}" aria-label="TikTok">{% render 'icon', name: 'tiktok' %}</a>
+          {%- endif -%}
+          {%- if settings.social_facebook != blank -%}
+            <a href="{{ settings.social_facebook }}" aria-label="Facebook">{% render 'icon', name: 'facebook' %}</a>
+          {%- endif -%}
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Rechtliches</h4>
+        <ul>
+          <li><a href="/policies/legal-notice">Impressum</a></li>
+          <li><a href="/policies/privacy-policy">Datenschutz</a></li>
+          <li><a href="/policies/terms-of-service">AGB</a></li>
+          <li><a href="/policies/refund-policy">Widerrufsrecht</a></li>
+          <li><a href="/policies/shipping-policy">Versand</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Service</h4>
+        <ul>
+          <li><a href="/pages/contact">Kontakt</a></li>
+          <li><a href="/pages/faq">Häufige Fragen</a></li>
+          <li><a href="/pages/tracking">Sendungsverfolgung</a></li>
+          <li><a href="/account">Mein Konto</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Zahlungsarten</h4>
+        <div class="footer-payments">
+          <span class="payment-badge">Klarna</span>
+          <span class="payment-badge">PayPal</span>
+          <span class="payment-badge">Visa</span>
+          <span class="payment-badge">Mastercard</span>
+          <span class="payment-badge">SOFORT</span>
+          <span class="payment-badge">Apple Pay</span>
+        </div>
+        <p class="footer-secure">{{ 'footer.secure_payment' | t }} · SSL 256-bit</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {{ 'now' | date: '%Y' }} STIQO. {{ 'footer.rights' | t }}</p>
+      <p class="footer-bottom__tag">{{ 'footer.made_with_love' | t }}</p>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    { "type": "checkbox", "id": "show_newsletter", "label": "Newsletter anzeigen", "default": true },
+    { "type": "textarea", "id": "about_text", "label": "Über STIQO", "default": "STIQO bringt deinen Morgen auf das nächste Level. Premium Protein-Kaffee mit echtem Café-Geschmack – für alle, die mehr aus jedem Sip wollen." }
+  ]
+}
+{% endschema %}

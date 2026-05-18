@@ -1,0 +1,60 @@
+<div class="announcement-bar" style="background:{{ section.settings.bar_bg }};color:{{ section.settings.bar_color }}">
+  <div class="container announcement-bar__inner">
+    <span>{{ section.settings.announcement_text }}</span>
+  </div>
+</div>
+
+<header class="site-header" data-header>
+  <div class="container site-header__inner">
+    <button class="site-header__burger" data-mobile-toggle aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
+
+    <a href="/" class="site-header__logo">
+      {%- if section.settings.logo != blank -%}
+        <img src="{{ section.settings.logo | image_url: width: 240 }}"
+             alt="{{ shop.name }}"
+             width="120" height="40" loading="eager">
+      {%- else -%}
+        <span class="logo-text">STIQO</span>
+      {%- endif -%}
+    </a>
+
+    <nav class="site-nav" aria-label="Hauptnavigation">
+      {%- for link in linklists[section.settings.menu].links -%}
+        <a href="{{ link.url }}" class="site-nav__link {% if link.active %}is-active{% endif %}">{{ link.title }}</a>
+      {%- endfor -%}
+    </nav>
+
+    <div class="site-header__actions">
+      <a href="/search" class="header-icon" aria-label="Suche">
+        {% render 'icon', name: 'search' %}
+      </a>
+      <button type="button" class="header-icon header-cart" data-cart-open aria-label="Warenkorb öffnen">
+        {% render 'icon', name: 'cart' %}
+        <span class="header-cart__count" data-cart-count>{{ cart.item_count }}</span>
+      </button>
+    </div>
+  </div>
+
+  <nav class="mobile-nav" data-mobile-nav aria-label="Mobile Navigation">
+    {%- for link in linklists[section.settings.menu].links -%}
+      <a href="{{ link.url }}">{{ link.title }}</a>
+    {%- endfor -%}
+  </nav>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    { "type": "header", "content": "Ankündigungsleiste" },
+    { "type": "text", "id": "announcement_text", "label": "Text", "default": "☕ Kostenloser Versand ab 39€ ✦ 30 Tage Geld-zurück-Garantie ✦ Versand aus Deutschland" },
+    { "type": "color", "id": "bar_bg", "label": "Hintergrund", "default": "#3E2A1F" },
+    { "type": "color", "id": "bar_color", "label": "Textfarbe", "default": "#FFFFFF" },
+    { "type": "header", "content": "Logo & Menü" },
+    { "type": "image_picker", "id": "logo", "label": "Logo (PNG/SVG)" },
+    { "type": "link_list", "id": "menu", "label": "Hauptmenü", "default": "main-menu" }
+  ]
+}
+{% endschema %}

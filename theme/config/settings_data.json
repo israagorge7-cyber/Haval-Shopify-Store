@@ -1,0 +1,26 @@
+{
+  "current": {
+    "color_primary": "#A0522D",
+    "color_secondary": "#3E2A1F",
+    "color_accent": "#F4ECE2",
+    "color_text": "#1F1410",
+    "color_background": "#FFFFFF",
+    "color_muted": "#6B5A4F",
+    "color_border": "#E8DDD0",
+    "font_heading": "playfair_display_n7",
+    "font_body": "inter_n4",
+    "page_width": 1280,
+    "border_radius": 12,
+    "free_shipping_enabled": true,
+    "free_shipping_threshold": 3900,
+    "social_instagram": "https://instagram.com/stiqo",
+    "social_tiktok": "https://tiktok.com/@stiqo",
+    "social_facebook": ""
+  },
+  "presets": {
+    "STIQO Coffee": {
+      "color_primary": "#A0522D",
+      "color_secondary": "#3E2A1F"
+    }
+  }
+}

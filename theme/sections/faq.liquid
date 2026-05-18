@@ -1,0 +1,46 @@
+<section class="faq">
+  <div class="container">
+    <h2 class="section-title">{{ section.settings.title }}</h2>
+    <div class="faq__list" data-accordion>
+      {%- for block in section.blocks -%}
+        <details class="faq__item" {{ block.shopify_attributes }}>
+          <summary>{{ block.settings.question }}</summary>
+          <div class="faq__answer">{{ block.settings.answer }}</div>
+        </details>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "FAQ",
+  "max_blocks": 12,
+  "settings": [
+    { "type": "text", "id": "title", "label": "Titel", "default": "Häufige Fragen" }
+  ],
+  "blocks": [
+    {
+      "type": "qa",
+      "name": "Frage",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Frage" },
+        { "type": "richtext", "id": "answer", "label": "Antwort" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ",
+      "blocks": [
+        { "type": "qa", "settings": { "question": "Wie schmeckt STIQO Protein Coffee?", "answer": "<p>Wie ein vollmundiger Café Latte – nicht wie typischer Protein-Drink. Wir nutzen 100% Arabica und ein neuartiges Whey-Verfahren, das den klassischen Pulvergeschmack eliminiert.</p>" } },
+        { "type": "qa", "settings": { "question": "Wie viel Koffein steckt drin?", "answer": "<p>180 mg pro Sachet – das entspricht ungefähr 2 Espressi. Ideal für den Morgen oder als Pre-Workout.</p>" } },
+        { "type": "qa", "settings": { "question": "Mit welcher Flüssigkeit mixe ich am besten?", "answer": "<p>Beides funktioniert: Wasser für einen leichteren Americano-Style, Milch oder Hafermilch für einen cremigen Latte. Heiß oder eiskalt – ganz wie du magst.</p>" } },
+        { "type": "qa", "settings": { "question": "Wie schnell ist die Lieferung?", "answer": "<p>Heute bestellt – morgen versendet. Lieferung mit DHL aus unserem Lager in Deutschland in 1–3 Werktagen.</p>" } },
+        { "type": "qa", "settings": { "question": "Welche Zahlungsarten gibt es?", "answer": "<p>Klarna (Rechnung & Ratenkauf), PayPal, Kreditkarte, SOFORT, Apple Pay und Google Pay.</p>" } },
+        { "type": "qa", "settings": { "question": "Kann ich zurückgeben?", "answer": "<p>Ja, 30 Tage Geld-zurück-Garantie. Wenn dir der Geschmack nicht zusagt, erstatten wir den vollen Betrag.</p>" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
